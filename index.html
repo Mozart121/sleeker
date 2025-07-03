@@ -39,6 +39,10 @@
             </ul>
         </nav>
     </div>
+
+<button class="mobile-menu-toggle">
+    <i class="fas fa-bars"></i>
+</button>
 </header>
 
     <!-- Герой-секция -->
@@ -126,5 +130,12 @@
             </div>
         </div>
     </footer>
+<script>
+    document.querySelector('.mobile-menu-toggle').addEventListener('click', function() {
+        const nav = document.querySelector('nav');
+        nav.classList.toggle('active');
+    });
+</script>
+
 </body>
 </html>
