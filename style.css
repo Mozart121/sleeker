@@ -876,3 +876,41 @@ footer .container {
     color: var(--text-light);
     font-size: 0.95rem;
 }
+
+/* Мобильная адаптация шапки */
+@media (max-width: 768px) {
+    header .container {
+        flex-direction: column;
+        padding: 10px 0;
+    }
+    
+    nav ul {
+        flex-direction: column;
+        width: 100%;
+        margin-top: 15px;
+    }
+    
+    nav ul li {
+        margin: 5px 0;
+        width: 100%;
+    }
+    
+    .header-phone {
+        justify-content: center;
+        margin: 10px 0;
+        width: 100%;
+    }
+    
+    .btn {
+        width: 100%;
+        text-align: center;
+        margin-top: 10px;
+    }
+    
+    .dropdown-menu {
+        position: static;
+        width: 100%;
+        box-shadow: none;
+        margin-top: 5px;
+    }
+}
