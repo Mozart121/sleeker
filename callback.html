@@ -1,0 +1,538 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Заказать звонок | Sleeker</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        /* Базовые настройки */
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --accent: #e74c3c;
+            --light: #ecf0f1;
+            --dark: #34495e;
+            --text: #333;
+            --text-light: #7f8c8d;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            color: var(--text);
+            line-height: 1.6;
+            background-color: #f9f9f9;
+        }
+
+        h1, h2, h3, h4, h5 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--secondary);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #2980b9;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        /* Шапка сайта */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .logo img {
+            height: 70px; /* Увеличенный размер логотипа */
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            align-items: center;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+            position: relative;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: color 0.3s;
+            padding: 8px 12px;
+            border-radius: 4px;
+        }
+
+        nav ul li a:hover {
+            color: var(--secondary);
+            background: rgba(52, 152, 219, 0.1);
+        }
+
+        .dropdown-menu {
+            position: absolute;
+            background: white;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            border-radius: 4px;
+            min-width: 200px;
+            top: 100%;
+            left: 0;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: all 0.3s ease;
+            z-index: 100;
+        }
+
+        .dropdown:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .dropdown-menu li {
+            margin: 0;
+            width: 100%;
+        }
+
+        .dropdown-menu li a {
+            display: block;
+            padding: 12px 20px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .dropdown-menu li:last-child a {
+            border-bottom: none;
+        }
+
+        .header-phone {
+            display: flex;
+            align-items: center;
+            padding: 8px 15px;
+            border-radius: 30px;
+            background: rgba(52, 152, 219, 0.1);
+        }
+
+        .header-phone a {
+            font-weight: 700;
+            font-size: 16px;
+            color: var(--secondary);
+        }
+
+        .header-phone span {
+            margin-left: 10px;
+            font-size: 13px;
+            color: var(--text-light);
+        }
+
+        /* Баннер страницы */
+        .page-banner {
+            background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('images/hero-bg.jpg') center/cover no-repeat;
+            color: white;
+            text-align: center;
+            padding: 180px 0 100px;
+            margin-top: 80px;
+        }
+
+        .page-banner h1 {
+            font-size: 2.8rem;
+            margin-bottom: 15px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .page-banner p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+
+        /* Форма обратного звонка */
+        .callback-form {
+            padding: 80px 0;
+        }
+
+        .form-wrapper {
+            background: white;
+            border-radius: 8px;
+            padding: 40px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            max-width: 700px;
+            margin: 0 auto;
+            position: relative;
+            border-top: 4px solid var(--secondary);
+        }
+
+        .form-wrapper h2 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: var(--primary);
+            text-align: center;
+        }
+
+        .form-wrapper p {
+            color: var(--text-light);
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 1.1rem;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--dark);
+            font-size: 1rem;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 14px 18px;
+            border: 2px solid #e0e6ed;
+            border-radius: 4px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: var(--secondary);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+        }
+
+        .form-group input {
+            background: #f8f9fa;
+        }
+
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+            background: #f8f9fa;
+        }
+
+        button.btn {
+            width: 100%;
+            padding: 14px;
+            font-size: 1.1rem;
+            margin-top: 10px;
+        }
+
+        /* Подвал */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 60px 0 0;
+        }
+
+        footer .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .footer-col h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-col h3:after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background: var(--secondary);
+        }
+
+        .footer-col p {
+            color: #bdc3c7;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            color: #bdc3c7;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--secondary);
+        }
+
+        .copyright {
+            background-color: rgba(0,0,0,0.2);
+            padding: 20px 0;
+            margin-top: 60px;
+            text-align: center;
+        }
+
+        .copyright p {
+            color: #95a5a6;
+            margin: 0;
+        }
+
+        /* Адаптивность */
+        @media (max-width: 992px) {
+            .logo img {
+                height: 60px;
+            }
+            
+            nav ul {
+                flex-wrap: wrap;
+            }
+            
+            nav ul li {
+                margin-left: 15px;
+                margin-bottom: 10px;
+            }
+            
+            .header-phone span {
+                display: none;
+            }
+            
+            .page-banner {
+                padding: 150px 0 80px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .page-banner {
+                padding: 140px 0 70px;
+            }
+            
+            .page-banner h1 {
+                font-size: 2.2rem;
+            }
+            
+            .form-wrapper {
+                padding: 30px 20px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .logo img {
+                height: 50px;
+            }
+            
+            .page-banner {
+                padding: 120px 0 60px;
+            }
+            
+            .page-banner h1 {
+                font-size: 1.8rem;
+            }
+            
+            .page-banner p {
+                font-size: 1rem;
+            }
+            
+            .header-phone {
+                padding: 6px 10px;
+            }
+            
+            .callback-form {
+                padding: 50px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Шапка сайта -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="images/logo.png" alt="NanoTech Solutions">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="about.html">О нас</a></li>
+                    <li class="dropdown">
+                        <a href="services.html">Услуги</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="one-time.html">Единоразовые услуги</a></li>
+                            <li><a href="packages.html">Пакетные предложения</a></li>
+                            <li><a href="lab.html">Лабораторные исследования</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="contacts.html">Контакты</a></li>
+                    <li><a href="blog.html">Блог</a></li>
+                    <li class="header-phone">
+                        <a href="tel:+74951234567">8 800 800 8000</a>
+                        <span>Звоните прямо сейчас</span>
+                    </li>
+                    <li><a href="callback.html" class="btn active">Заказать звонок</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Баннер страницы -->
+    <section class="page-banner">
+        <div class="container">
+            <h1>Заказать звонок</h1>
+            <p>Мы свяжемся с вами в удобное время и ответим на все вопросы</p>
+        </div>
+    </section>
+
+    <!-- Форма обратного звонка -->
+    <section class="callback-form">
+        <div class="container">
+            <div class="form-wrapper">
+                <h2>Оставьте свои контакты</h2>
+                <p>Наш специалист свяжется с вами в течение 30 минут в рабочее время</p>
+                
+                <form>
+                    <div class="form-group">
+                        <label for="callback-name"><i class="fas fa-user"></i> Имя *</label>
+                        <input type="text" id="callback-name" placeholder="Введите ваше имя" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="callback-phone"><i class="fas fa-mobile-alt"></i> Телефон *</label>
+                        <input type="tel" id="callback-phone" placeholder="+7 (___) ___-__-__" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="callback-email"><i class="fas fa-envelope"></i> Email</label>
+                        <input type="email" id="callback-email" placeholder="Ваш email (необязательно)">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="callback-time"><i class="fas fa-clock"></i> Удобное время звонка</label>
+                        <select id="callback-time">
+                            <option value="">В любое время</option>
+                            <option value="9-12">9:00 - 12:00</option>
+                            <option value="12-15">12:00 - 15:00</option>
+                            <option value="15-18">15:00 - 18:00</option>
+                            <option value="18-21">18:00 - 21:00</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="callback-message"><i class="fas fa-comment"></i> Краткое описание вопроса</label>
+                        <textarea id="callback-message" placeholder="Расскажите, по какому вопросу вам нужна консультация"></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn">
+                        <i class="fas fa-paper-plane"></i> Заказать звонок
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Подвал -->
+    <footer>
+        <div class="container">
+            <div class="footer-col">
+                <h3>Sleeker</h3>
+                <p>Научно-исследовательские решения для промышленности</p>
+            </div>
+            <div class="footer-col">
+                <h3>Услуги</h3>
+                <ul>
+                    <li><a href="one-time.html">Единоразовые услуги</a></li>
+                    <li><a href="packages.html">Пакетные решения</a></li>
+                    <li><a href="lab.html">Лабораторные исследования</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Контакты</h3>
+                <p>8 800 800 8000</p>
+                <p>info@sleeker.ru</p>
+                <p>Пермь, ул. Сухобруса, д. 27</p>
+            </div>
+        </div>
+        <div class="copyright">
+            <div class="container">
+                <p>&copy; 2023 ООО "Сликер". Все права защищены</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Простая валидация формы
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('callback-name').value;
+            const phone = document.getElementById('callback-phone').value;
+            
+            if(name.trim() === '' || phone.trim() === '') {
+                alert('Пожалуйста, заполните обязательные поля (Имя и Телефон)');
+                return;
+            }
+            
+            // Здесь обычно отправка формы на сервер
+            alert('Спасибо! Ваша заявка принята. Мы свяжемся с вами в ближайшее время.');
+            this.reset();
+        });
+    </script>
+</body>
+</html>

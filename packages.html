@@ -1,0 +1,312 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Пакетные предложения | Sleeker</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Шапка сайта -->
+    <header>
+    <div class="container">
+        <div class="logo">
+            <!-- Увеличиваем логотип -->
+            <img src="images/logo.png" alt="NanoTech Solutions" style="height: 70px;">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="about.html">О нас</a></li>
+                <li class="dropdown active">
+                    <a href="services.html">Услуги</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="one-time.html">Единоразовые услуги</a></li>
+                        <li><a href="packages.html">Пакетные предложения</a></li>
+                        <li><a href="lab.html" class="active">Лабораторные исследования</a></li>
+                    </ul>
+                </li>
+                <li><a href="contacts.html">Контакты</a></li>
+                <li><a href="blog.html">Блог</a></li>
+                <li class="header-phone">
+                    <a href="tel:+74951234567">8 800 800 8000</a>
+                    <span> Звоните прямо сейчас </span>
+                </li>
+                <li><a href="callback.html" class="btn">Заказать звонок</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+    <!-- Баннер страницы -->
+    <section class="page-banner">
+        <div class="container">
+            <h1>Пакетные предложения</h1>
+            <p>Комплексные решения для бизнеса любого масштаба</p>
+        </div>
+    </section>
+
+    <!-- Основной контент -->
+    <section class="packages-content">
+        <div class="container">
+            <div class="packages-intro">
+                <h2>Оптимальные решения для вашего бизнеса</h2>
+                <p>Мы разработали пакеты услуг, которые охватывают все этапы создания и продвижения продукта</p>
+            </div>
+
+            <div class="business-tabs">
+                <button class="tab-btn active" data-tab="small">Малый бизнес</button>
+                <button class="tab-btn" data-tab="medium">Средний бизнес</button>
+                <button class="tab-btn" data-tab="large">Крупный бизнес</button>
+            </div>
+
+            <div class="tab-content active" id="small">
+                <div class="package-card">
+                    <h3>«Базовый запуск»</h3>
+                    <ul>
+                        <li>Разработка рецептуры 1 продукта</li>
+                        <li>Подготовка документов (ТУ, тех.регламент)</li>
+                        <li>Сертификация (декларация) 1 продукта</li>
+                    </ul>
+                    <p class="price">50 000–80 000 руб</p>
+                </div>
+                
+                <div class="package-card">
+                    <h3>MVP-разработка продукта</h3>
+                    <ul>
+                        <li>Анализ 1-3 предоставленных продуктов</li>
+                        <li>Оптимизация рецептуры под конкретное производство</li>
+                        <li>Тесты стабильности (14 дней)</li>
+                        <li>Подготовка документов (ТУ, тех.регламент)</li>
+                    </ul>
+                    <p class="price">120 000–300 000 руб</p>
+                </div>
+                
+                <div class="package-card">
+                    <h3>«Производство под ключ»</h3>
+                    <ul>
+                        <li>Анализ 1-3 предоставленных продуктов</li>
+                        <li>Разработка рецептуры 1 продукта</li>
+                        <li>Оптимизация рецептуры под производство</li>
+                        <li>Наладка технологии</li>
+                        <li>Получение тестовой партии</li>
+                        <li>Передача экспертизы вашей команде</li>
+                        <li>Поддержка на переходном этапе</li>
+                        <li>Тесты стабильности (14 дней)</li>
+                        <li>Подготовка документов</li>
+                        <li>Дизайн этикетки (1 SKU)</li>
+                        <li>Дизайн упаковки (1 SKU)</li>
+                        <li>Фирменный стиль</li>
+                        <li>Брендбук</li>
+                        <li>Сертификация 1 продукта</li>
+                    </ul>
+                    <p class="price">250 000 – 400 000 руб</p>
+                </div>
+                
+                <div class="package-card">
+                    <h3>Сертификационный пакет</h3>
+                    <ul>
+                        <li>Разработка документов (ТУ, тех.регламент, заявки)</li>
+                        <li>Проведение и получение протоколов испытаний</li>
+                        <li>Подготовка SDS</li>
+                        <li>Ускорение сроков</li>
+                    </ul>
+                    <p class="price">80 000–100 000 руб</p>
+                </div>
+                
+                <div class="package-card">
+                    <h3>Контроль качества (годовой)</h3>
+                    <ul>
+                        <li>До 80 анализов сырья/готовой продукции в год</li>
+                        <li>Аудит цепочки производства</li>
+                        <li>Аудит цепочки поставок</li>
+                        <li>Экстренная поддержка</li>
+                        <li>Фиксированная цена на год</li>
+                    </ul>
+                    <p class="price">350 000–600 000 руб</p>
+                </div>
+            </div>
+
+            <div class="tab-content" id="medium">
+                <!-- Аналогично для среднего бизнеса -->
+                <div class="package-card">
+                    <h3>«Полный цикл разработки»</h3>
+                    <ul>
+                        <li>Рецептура + технология (до 5 продуктов)</li>
+                        <li>Промышленные испытания</li>
+                        <li>Документы (ТУ, SDS, ГОСТ)</li>
+                        <li>Сертификация</li>
+                    </ul>
+                    <p class="price">500 000–1 200 000 руб</p>
+                </div>
+                
+                <div class="package-card">
+                    <h3>Внедрение технологии</h3>
+                    <ul>
+                        <li>Подбор оборудования (ВЭЖХ/UHPLC)</li>
+                        <li>Обучение персонала</li>
+                        <li>Гарантия запуска за 30 дней</li>
+                    </ul>
+                    <p class="price">100 000–2 500 000 руб</p>
+                </div>
+                
+                <div class="package-card">
+                    <h3>«Технологический аудит»</h3>
+                    <ul>
+                        <li>Анализ цепочки производства</li>
+                        <li>Оптимизация процессов</li>
+                        <li>Внедрение ИТ-решений (1С)</li>
+                    </ul>
+                    <p class="price">300 000–800 000 руб</p>
+                </div>
+                
+                <div class="package-card">
+                    <h3>Аутсорсинг ОТК</h3>
+                    <ul>
+                        <li>Ежедневный/еженедельный забор образцов</li>
+                        <li>Проведение анализов по ключевым параметрам</li>
+                        <li>Отчеты по GMP</li>
+                    </ul>
+                    <p class="price">50 000-200 000 руб/мес</p>
+                </div>
+                
+                <div class="package-card">
+                    <h3>Экстренный аудит (72 часа)</h3>
+                    <ul>
+                        <li>Приоритетная очередь</li>
+                        <li>Анализ качества продукции и сырья</li>
+                        <li>Выводы по критическим рискам</li>
+                        <li>Рекомендации по решению проблемы</li>
+                        <li>Отчеты в установленной форме</li>
+                    </ul>
+                    <p class="price">100 000 руб/сессия</p>
+                </div>
+                
+                <div class="package-card">
+                    <h3>«Премиум-брендинг»</h3>
+                    <ul>
+                        <li>Дизайн упаковки (2 SKU)</li>
+                        <li>Фирменный стиль</li>
+                        <li>Брендбук</li>
+                    </ul>
+                    <p class="price">360 000–600 000 руб</p>
+                    <p class="note">Рост узнаваемости на 70%</p>
+                </div>
+            </div>
+
+            <div class="tab-content" id="large">
+                <div class="package-card">
+                    <h3>Корпоративная научная лаборатория</h3>
+                    <ul>
+                        <li>Проектирование лаборатории под ключ</li>
+                        <li>Поставка и наладка оборудования</li>
+                        <li>Разработка методик анализа</li>
+                        <li>Обучение персонала</li>
+                        <li>Сопровождение 12 месяцев</li>
+                    </ul>
+                    <p class="price">от 5 000 000 руб</p>
+                </div>
+                
+                <div class="package-card">
+                    <h3>Цифровизация производства</h3>
+                    <ul>
+                        <li>Разработка цифрового двойника производства</li>
+                        <li>Внедрение IIoT-платформы</li>
+                        <li>SCADA-системы управления</li>
+                        <li>LIMS система контроля качества</li>
+                        <li>Предиктивная аналитика оборудования</li>
+                    </ul>
+                    <p class="price">от 3 500 000 руб</p>
+                </div>
+                
+                <div class="package-card">
+                    <h3>Комплексная безопасность</h3>
+                    <ul>
+                        <li>Аудит производственных рисков</li>
+                        <li>Разработка системы HACCP</li>
+                        <li>Внедрение блокчейн-трекинга</li>
+                        <li>Кибербезопасность промышленных сетей</li>
+                        <li>Системы экологического мониторинга</li>
+                    </ul>
+                    <p class="price">от 2 800 000 руб</p>
+                </div>
+                
+                <div class="package-card">
+                    <h3>Глобальная сертификация</h3>
+                    <ul>
+                        <li>Подготовка документации по стандартам ЕАЭС, ЕС, FDA</li>
+                        <li>Проведение испытаний в аккредитованных лабораториях</li>
+                        <li>Получение международных сертификатов</li>
+                        <li>Сопровождение инспекций</li>
+                    </ul>
+                    <p class="price">от 1 200 000 руб</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Призыв к действию -->
+    <section class="cta">
+        <div class="container">
+            <h2>Нужен индивидуальный пакет?</h2>
+            <p>Мы разработаем решение специально под ваши бизнес-задачи</p>
+            <a href="callback.html" class="btn">Заказать консультацию</a>
+        </div>
+    </section>
+
+    <!-- Подвал -->
+    <footer>
+        <div class="container">
+            <div class="footer-col">
+                <h3>Sleeker</h3>
+                <p>Научно-исследовательские решения для промышленности</p>
+            </div>
+            <div class="footer-col">
+                <h3>Услуги</h3>
+                <ul>
+                    <li><a href="one-time.html">Единоразовые услуги</a></li>
+                    <li><a href="packages.html">Пакетные решения</a></li>
+                    <li><a href="lab.html">Лабораторные исследования</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Контакты</h3>
+                <p>8 800 800 8000</p>
+                <p>info@sleeker.ru</p>
+                <p>Пермь, ул. Сухобруса, д. 27</p>
+            </div>
+        </div>
+        <div class="copyright">
+            <div class="container">
+                <p>&copy; 2023 ООО "Сликер". Все права защищены</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Скрипт для переключения вкладок
+        document.addEventListener('DOMContentLoaded', function() {
+            const tabBtns = document.querySelectorAll('.tab-btn');
+            const tabContents = document.querySelectorAll('.tab-content');
+            
+            tabBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    // Убираем активный класс у всех кнопок и контента
+                    tabBtns.forEach(b => b.classList.remove('active'));
+                    tabContents.forEach(c => c.classList.remove('active'));
+                    
+                    // Добавляем активный класс текущей кнопке
+                    btn.classList.add('active');
+                    
+                    // Показываем соответствующий контент
+                    const tabId = btn.getAttribute('data-tab');
+                    document.getElementById(tabId).classList.add('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
